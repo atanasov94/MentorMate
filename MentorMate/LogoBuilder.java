@@ -3,12 +3,12 @@ package MentorMate;
 public class LogoBuilder {
     private static final String LOGO_EMPTY_SPACE = "-";
     private static final String LOGO_FILLER = "*";
-    private StringBuilder logoBuilder;
+    private StringBuilder stringBuilder;
     private int scale;
 
     public LogoBuilder(int scale) {
         this.setScale(scale);
-        this.logoBuilder = new StringBuilder();
+        this.stringBuilder = new StringBuilder();
     }
 
     private void setScale(int scale) {
@@ -28,27 +28,27 @@ public class LogoBuilder {
 
     private void printLowerHalfOfLogo(int scale) {
         for (int i = 0; i < scale / 2 + 1; i++) {
-            logoBuilder.setLength(0);
-            logoBuilder.append(LOGO_EMPTY_SPACE.repeat(scale / 2 - i));
-            logoBuilder.append(LOGO_FILLER.repeat(scale));
-            logoBuilder.append(LOGO_EMPTY_SPACE.repeat(1 + 2 * i));
-            logoBuilder.append(LOGO_FILLER.repeat(2 * scale - 1 - 2 * i));
-            logoBuilder.append(LOGO_EMPTY_SPACE.repeat(1 + 2 * i));
-            logoBuilder.append(LOGO_FILLER.repeat(scale));
-            logoBuilder.append(LOGO_EMPTY_SPACE.repeat(scale / 2 - i));
-            System.out.println(logoBuilder.toString().repeat(2));
+            stringBuilder.setLength(0);
+            stringBuilder.append(LOGO_EMPTY_SPACE.repeat(scale / 2 - i));
+            stringBuilder.append(LOGO_FILLER.repeat(scale));
+            stringBuilder.append(LOGO_EMPTY_SPACE.repeat(1 + 2 * i));
+            stringBuilder.append(LOGO_FILLER.repeat(2 * scale - 1 - 2 * i));
+            stringBuilder.append(LOGO_EMPTY_SPACE.repeat(1 + 2 * i));
+            stringBuilder.append(LOGO_FILLER.repeat(scale));
+            stringBuilder.append(LOGO_EMPTY_SPACE.repeat(scale / 2 - i));
+            System.out.println(stringBuilder.toString().repeat(2));
         }
     }
 
     private void printUpperHalfOfLogo(int scale) {
         for (int i = 0; i < scale / 2 + 1; i++) {
-            logoBuilder.setLength(0);
-            logoBuilder.append(LOGO_EMPTY_SPACE.repeat(scale - i));
-            logoBuilder.append(LOGO_FILLER.repeat(scale + 2 * i));
-            logoBuilder.append(LOGO_EMPTY_SPACE.repeat(scale - 2 * i));
-            logoBuilder.append(LOGO_FILLER.repeat(scale + 2 * i));
-            logoBuilder.append(LOGO_EMPTY_SPACE.repeat(scale - i));
-            System.out.println(logoBuilder.toString().repeat(2));
+            stringBuilder.setLength(0);
+            stringBuilder.append(LOGO_EMPTY_SPACE.repeat(scale - i));
+            stringBuilder.append(LOGO_FILLER.repeat(scale + 2 * i));
+            stringBuilder.append(LOGO_EMPTY_SPACE.repeat(scale - 2 * i));
+            stringBuilder.append(LOGO_FILLER.repeat(scale + 2 * i));
+            stringBuilder.append(LOGO_EMPTY_SPACE.repeat(scale - i));
+            System.out.println(stringBuilder.toString().repeat(2));
         }
     }
 }
